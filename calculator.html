@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #5B9BD5 0%, #4A7BA7 100%);
+        }
+
+        .calculator {
+            background: linear-gradient(145deg, #f0f4f8 0%, #e8eef5 100%);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        .display {
+            background: linear-gradient(145deg, #dfe8f0 0%, #e8f0f8 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .expression {
+            font-size: 18px;
+            color: #5B9BD5;
+            min-height: 30px;
+            text-align: right;
+            word-wrap: break-word;
+        }
+
+        .result {
+            font-size: 48px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: right;
+            word-wrap: break-word;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+        }
+
+        button {
+            padding: 20px;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            background: linear-gradient(145deg, #e8f0f8 0%, #d0e0f0 100%);
+            color: #4A7BA7;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .number {
+            background: linear-gradient(145deg, #f5f9fc 0%, #e8f0f8 100%);
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .operator {
+            background: linear-gradient(145deg, #b8d4ea 0%, #a0c5e0 100%);
+            color: #4A7BA7;
+            font-weight: 600;
+        }
+
+        .function {
+            background: linear-gradient(145deg, #d0e0f0 0%, #b8d4ea 100%);
+            color: #5B9BD5;
+            font-size: 16px;
+        }
+
+        .enter {
+            background: linear-gradient(145deg, #5B9BD5 0%, #4A7BA7 100%);
+            color: white;
+            font-weight: 600;
+            grid-column: span 2;
+        }
+
+        .enter:hover {
+            background: linear-gradient(145deg, #4A7BA7 0%, #3a6590 100%);
+        }
+
+        .equal {
+            background: linear-gradient(145deg, #9db8d0 0%, #8ba8c0 100%);
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="expression" id="expression"></div>
+            <div class="result" id="result">0</div>
+        </div>
+        <div class="buttons">
+            <button class="function" onclick="addToExpression('(')">(</button>
+            <button class="function" onclick="addToExpression(')')">)</button>
+            <button class="function" onclick="answer()">ans</button>
+            <button class="function" onclick="deleteChar()">del</button>
+            <button class="function" onclick="clearAll()">clear</button>
+            
+            <button class="number" onclick="addToExpression('7')">7</button>
+            <button class="number" onclick="addToExpression('8')">8</button>
+            <button class="number" onclick="addToExpression('9')">9</button>
+            <button class="operator" onclick="addToExpression('%')">%</button>
+            <button class="operator" onclick="squareRoot()">√</button>
+            
+            <button class="number" onclick="addToExpression('4')">4</button>
+            <button class="number" onclick="addToExpression('5')">5</button>
+            <button class="number" onclick="addToExpression('6')">6</button>
+            <button class="operator" onclick="addToExpression('*')">×</button>
+            <button class="operator" onclick="addToExpression('/')">÷</button>
+            
+            <button class="number" onclick="addToExpression('1')">1</button>
+            <button class="number" onclick="addToExpression('2')">2</button>
+            <button class="number" onclick="addToExpression('3')">3</button>
+            <button class="operator" onclick="addToExpression('+')">+</button>
+            <button class="operator" onclick="addToExpression('-')">−</button>
+            
+            <button class="number" onclick="addToExpression('.')">.</button>
+            <button class="number" onclick="addToExpression('0')">0</button>
+            <button class="equal" onclick="addToExpression('**')">±</button>
+            <button class="enter" onclick="calculate()">ENTER</button>
+        </div>
+    </div>
+
+    <script>
+        let expression = '';
+        let result = '0';
+        let lastAnswer = '0';
+
+        const expressionDisplay = document.getElementById('expression');
+        const resultDisplay = document.getElementById('result');
+
+        function updateDisplay() {
+            expressionDisplay.textContent = expression.replace(/\*/g, '×').replace(/\//g, '÷');
+            resultDisplay.textContent = result;
+        }
+
+        function addToExpression(value) {
+            if (expression === '0' && value !== '.') {
+                expression = value;
+            } else {
+                expression += value;
+            }
+            updateDisplay();
+        }
+
+        function clearAll() {
+            expression = '';
+            result = '0';
+            updateDisplay();
+        }
+
+        function deleteChar() {
+            if (expression.length > 0) {
+                expression = expression.slice(0, -1);
+            }
+            if (expression === '') {
+                result = '0';
+            }
+            updateDisplay();
+        }
+
+        function answer() {
+            expression += lastAnswer;
+            updateDisplay();
+        }
+
+        function squareRoot() {
+            if (expression) {
+                try {
+                    const value = eval(expression);
+                    result = Math.sqrt(value).toString();
+                    lastAnswer = result;
+                    expression = '';
+                    updateDisplay();
+                } catch (error) {
+                    result = 'Error';
+                    updateDisplay();
+                }
+            }
+        }
+
+        function calculate() {
+            if (expression === '') {
+                return;
+            }
+
+            try {
+                // Replace visual operators with JavaScript operators
+                let calcExpression = expression.replace(/×/g, '*').replace(/÷/g, '/');
+                
+                // Handle percentage
+                calcExpression = calcExpression.replace(/(\d+(?:\.\d+)?)%/g, (match, num) => {
+                    return (parseFloat(num) / 100).toString();
+                });
+
+                // Evaluate the expression
+                const calculatedResult = eval(calcExpression);
+                
+                // Format the result
+                if (Number.isFinite(calculatedResult)) {
+                    result = parseFloat(calculatedResult.toFixed(10)).toString();
+                    lastAnswer = result;
+                } else {
+                    result = 'Error';
+                }
+
+                expression = '';
+                updateDisplay();
+            } catch (error) {
+                result = 'Error';
+                updateDisplay();
+            }
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', (event) => {
+            const key = event.key;
+
+            if (key >= '0' && key <= '9') {
+                addToExpression(key);
+            } else if (key === '.') {
+                addToExpression('.');
+            } else if (key === '+' || key === '-') {
+                addToExpression(key);
+            } else if (key === '*') {
+                addToExpression('*');
+            } else if (key === '/') {
+                event.preventDefault();
+                addToExpression('/');
+            } else if (key === '%') {
+                addToExpression('%');
+            } else if (key === '(' || key === ')') {
+                addToExpression(key);
+            } else if (key === 'Enter') {
+                event.preventDefault();
+                calculate();
+            } else if (key === 'Escape') {
+                clearAll();
+            } else if (key === 'Backspace') {
+                deleteChar();
+            }
+        });
+
+        updateDisplay();
+    </script>
+</body>
+</html>
