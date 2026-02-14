@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Chhatrapati Shivaji Maharaj</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #0a0a0a;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .hero-section {
+            background: linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid #ff9933;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: #ff9933;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            color: #d4d4d4;
+            font-style: italic;
+            margin-bottom: 60px;
+        }
+
+        .play-button {
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            border: 3px solid white;
+            border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            border-color: #ff9933;
+        }
+
+        .play-button::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+            width: 0;
+            height: 0;
+            border-left: 25px solid white;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+        }
+
+        .play-button:hover::after {
+            border-left-color: #ff9933;
+        }
+
+        .quote-section {
+            background: white;
+            color: #333;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .quote-content {
+            flex: 1;
+            min-width: 300px;
+            padding: 0 40px;
+        }
+
+        .quote-text {
+            font-size: 28px;
+            line-height: 1.6;
+            color: #2c2c2c;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .quote-author {
+            font-size: 18px;
+            color: #666;
+            font-style: normal;
+        }
+
+        .image-container {
+            flex: 1;
+            min-width: 300px;
+            text-align: right;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .biography-section {
+            background-color: #0a0a0a;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 42px;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #ff9933;
+            letter-spacing: 1px;
+        }
+
+        .bio-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.9;
+            color: #d4d4d4;
+            text-align: justify;
+        }
+
+        .bio-content p {
+            margin-bottom: 25px;
+        }
+
+        .achievements-section {
+            background: #1a1a1a;
+            padding: 80px 20px;
+        }
+
+        .achievements-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .achievement-card {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9933;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 153, 51, 0.3);
+        }
+
+        .achievement-title {
+            font-size: 22px;
+            color: #ff9933;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .achievement-text {
+            font-size: 16px;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+
+        .legacy-section {
+            background-color: #0a0a0a;
+            padding: 80px 20px;
+        }
+
+        .legacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .legacy-quote {
+            font-size: 32px;
+            font-style: italic;
+            color: #ff9933;
+            margin: 40px 0;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background: #000;
+            padding: 30px 20px;
+            text-align: center;
+            border-top: 2px solid #ff9933;
+        }
+
+        .footer-text {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer-link {
+            color: #ff9933;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #ffb366;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 80px;
+            top: 30px;
+            bottom: -40px;
+            width: 2px;
+            background: #ff9933;
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-year {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff9933;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding: 10px 0;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            font-size: 16px;
+            color: #d4d4d4;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .quote-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .quote-text {
+                font-size: 22px;
+            }
+
+            .image-container {
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .bio-content {
+                font-size: 16px;
+            }
+
+            .legacy-quote {
+                font-size: 24px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .timeline-year {
+                text-align: left;
+            }
+
+            .timeline-item::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">Chhatrapati Shivaji Maharaj</h1>
+        <p class="hero-subtitle">1630 - 1680</p>
+        <div class="play-button" onclick="alert('Video tribute coming soon!')"></div>
+    </section>
+
+    <!-- Quote Section with Image -->
+    <section class="quote-section">
+        <div class="quote-content">
+            <p class="quote-text">
+                "Even if there were a sword in the hands of everyone, it is willpower that establishes a government."
+            </p>
+            <p class="quote-author">- Chhatrapati Shivaji Maharaj</p>
+        </div>
+        <div class="image-container">
+            <img src="shivaji_maharaj_photo.png" alt="Chhatrapati Shivaji Maharaj" class="hero-image" style="max-width: 450px; height: auto;">
+        </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="biography-section">
+        <h2 class="section-title">Biography</h2>
+        <div class="bio-content">
+            <p>
+                Chhatrapati Shivaji Maharaj was born on February 19, 1630, at Shivneri Fort in Maharashtra, India. He was the son of Shahaji Bhonsle and Jijabai. From a young age, Shivaji was inspired by the tales of great Hindu warriors and the Ramayana and Mahabharata, which his mother narrated to him. These stories instilled in him a deep sense of duty, courage, and devotion to his motherland.
+            </p>
+            <p>
+                Shivaji Maharaj is widely recognized as one of the greatest warriors and rulers in Indian history. He established the Maratha Empire by carving out an independent region from the declining Adilshahi sultanate of Bijapur. His military tactics, administrative skills, and progressive policies set him apart as a visionary leader who championed the cause of Swarajya (self-rule) and fought against oppression.
+            </p>
+            <p>
+                Known for his guerrilla warfare tactics, Shivaji Maharaj revolutionized military strategy in India. He built a network of forts across the Western Ghats and coastal regions, which served as strategic points for defense and administration. His navy was one of the first organized naval forces in India, protecting the Konkan coastline from foreign invasions.
+            </p>
+            <p>
+                Beyond his military prowess, Shivaji Maharaj was a visionary administrator. He established a well-structured government system, promoted the welfare of his subjects, and respected all religions. He abolished the Jizya tax, protected women's honor even during war, and established a disciplined military code. His administration was marked by efficiency, justice, and compassion.
+            </p>
+            <p>
+                Shivaji Maharaj was formally crowned as Chhatrapati (Emperor) on June 6, 1674, at Raigad Fort. This coronation marked the establishment of the Maratha Empire as a sovereign Hindu kingdom. He ruled with wisdom and courage until his death on April 3, 1680, leaving behind a legacy that continues to inspire millions even today.
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="biography-section">
+        <h2 class="section-title">Life Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-year">1630</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Birth</h3>
+                    <p class="timeline-description">Born at Shivneri Fort, Maharashtra to Shahaji Bhonsle and Jijabai</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1645</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">First Conquest</h3>
+                    <p class="timeline-description">Captured Torna Fort at the age of 16, marking the beginning of his military career</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1659</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Battle of Pratapgad</h3>
+                    <p class="timeline-description">Defeated Afzal Khan in one of the most famous battles in Maratha history</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1664</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Sack of Surat</h3>
+                    <p class="timeline-description">Raided the wealthy Mughal port city, establishing Maratha naval supremacy</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1666</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Escape from Agra</h3>
+                    <p class="timeline-description">Ingeniously escaped from Mughal Emperor Aurangzeb's captivity</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1674</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Coronation</h3>
+                    <p class="timeline-description">Crowned as Chhatrapati at Raigad Fort, establishing the Maratha Empire</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-year">1680</div>
+                <div class="timeline-content">
+                    <h3 class="timeline-title">Legacy Continues</h3>
+                    <p class="timeline-description">Passed away at Raigad Fort, leaving behind an empire and eternal inspiration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <h2 class="section-title">Major Achievements</h2>
+        <div class="achievements-grid">
+            <div class="achievement-card">
+                <h3 class="achievement-title">Military Genius</h3>
+                <p class="achievement-text">
+                    Pioneered guerrilla warfare tactics (Ganimi Kava) that revolutionized military strategy. Built over 300 forts and established a formidable navy to protect the Konkan coast.
+                </p>
+            </div>
+            <div class="achievement-card">
+                <h3 class="achievement-title">Administrative Excellence</h3>
+                <p class="achievement-text">
+                    Created the Ashtapradhan (Council of Eight Ministers) for efficient governance. Implemented progressive policies including land reforms and revenue systems that benefited farmers.
+                </p>
+            </div>
+            <div class="achievement-card">
+                <h3 class="achievement-title">Champion of Swarajya</h3>
+                <p class="achievement-text">
+                    Fought relentlessly for self-rule and independence against the Mughals and Adilshahi sultanate. Established the Maratha Empire as a sovereign Hindu kingdom.
+                </p>
+            </div>
+            <div class="achievement-card">
+                <h3 class="achievement-title">Religious Tolerance</h3>
+                <p class="achievement-text">
+                    Respected all religions and protected religious places during conquests. Abolished discriminatory taxes and ensured freedom of worship throughout his kingdom.
+                </p>
+            </div>
+            <div class="achievement-card">
+                <h3 class="achievement-title">Naval Power</h3>
+                <p class="achievement-text">
+                    Established one of India's first organized naval forces under the leadership of commanders like Kanhoji Angre, protecting coastlines from European powers.
+                </p>
+            </div>
+            <div class="achievement-card">
+                <h3 class="achievement-title">People's Welfare</h3>
+                <p class="achievement-text">
+                    Implemented strict codes of conduct for soldiers to protect civilians, especially women. Promoted local language (Marathi) in administration and respected the dignity of all subjects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legacy Section -->
+    <section class="legacy-section">
+        <h2 class="section-title">Eternal Legacy</h2>
+        <div class="legacy-content">
+            <div class="bio-content">
+                <p>
+                    Chhatrapati Shivaji Maharaj's legacy transcends time and continues to inspire millions across the world. His vision of Swarajya, his commitment to justice and equality, his military brilliance, and his administrative acumen make him one of the greatest rulers in Indian history.
+                </p>
+                <p>
+                    He proved that a small, determined force could challenge mighty empires through strategic thinking, courage, and unwavering dedication to a righteous cause. His respect for all religions, protection of the weak, and emphasis on good governance set standards that remain relevant even today.
+                </p>
+                <p>
+                    Shivaji Maharaj is not just a historical figure; he is a symbol of courage, righteousness, and self-respect. His life teaches us that with determination, integrity, and vision, one can overcome any obstacle and create lasting change.
+                </p>
+            </div>
+            <p class="legacy-quote">
+                "Self-confidence is the first requisite to great undertakings."
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">
+            Made with ❤️ by <a href="#" class="footer-link">Your Name</a>
+        </p>
+        <p class="footer-text" style="margin-top: 10px;">
+            Tribute to the Great Maratha Warrior and King
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scroll for any future navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply fade-in to timeline items and achievement cards
+        document.querySelectorAll('.timeline-item, .achievement-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
