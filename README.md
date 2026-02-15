@@ -1,7 +1,7 @@
-#🌐✨ Internship Task 2 — Interactive Web Projects
+<h1>🌐✨ Internship Task 2 — Interactive Web Projects</h1>
 
 
-📌🎯 Objective
+<h2>📌🎯 Objective</h2>
 
 The objective of this task is to develop four interactive web applications that demonstrate proficiency in frontend web development.
 Each project showcases different aspects of modern web design and functionality, including:<br><br>
@@ -16,7 +16,8 @@ Each project showcases different aspects of modern web design and functionality,
 
 🌍 Creating modern, accessible web applications
 
-🛠️⚙️ Tools & Technologies Used
+
+<h2>🛠️⚙️ Tools & Technologies Used</h2>
 
 HTML5 – Semantic markup and structure
 
@@ -32,8 +33,10 @@ Browser DevTools – Testing and debugging
 
 localStorage API – Data persistence
 
-🗂️🧩 Steps Performed
-🧠 1️⃣ Project Planning
+<h2>🗂️🧩 Steps Performed</h2>
+
+
+<h3>🧠 1️⃣ Project Planning</h3>
 
 Analyzed requirements for each application
 
@@ -41,7 +44,7 @@ Created wireframes and design mockups
 
 Planned features and functionality
 
-🧮 2️⃣ Calculator
+<h3>🧮 2️⃣ Calculator</h3>
 
 Designed modern gradient UI with responsive layout
 
@@ -55,7 +58,7 @@ Implemented expression parsing and evaluation
 
 Added error handling and validation
 
-🚩 3️⃣ Tribute Page
+<h3>🚩 3️⃣ Tribute Page</h3>
 
 Researched and gathered content about Chhatrapati Shivaji Maharaj
 
@@ -69,7 +72,7 @@ Added smooth scroll animations
 
 Optimized images and content structure
 
-✅ 4️⃣ To-Do App
+<h3>✅ 4️⃣ To-Do App</h3>
 
 Designed task management interface with three sections
 
@@ -83,7 +86,7 @@ Implemented date/time stamps for tasks
 
 Added form validation and user feedback
 
-🔐 5️⃣ Login Authentication System
+<h3>🔐 5️⃣ Login Authentication System</h3>
 
 Designed glassmorphism UI with animated background
 
@@ -97,7 +100,7 @@ Built protected dashboard with user statistics
 
 Implemented session management using localStorage
 
-🧪🧰 Testing & Optimization
+<h3>🧪🧰 Testing & Optimization</h3>
 
 Tested on multiple browsers (Chrome, Firefox, Safari, Edge)
 
@@ -107,10 +110,13 @@ Optimized performance and load times
 
 Fixed bugs and improved user experience
 
-🚀🌟 Projects Overview
+
+<h3>🚀🌟 Projects Overview</h3>
+
 🧮 Calculator
 
 📄 File: calculator.html
+
 ✨ Features:
 
 Basic & advanced operations (%, √, power)
@@ -126,6 +132,7 @@ Answer recall
 🚩 Tribute Page — Chhatrapati Shivaji Maharaj
 
 📄 File: tribute-shivaji-maharaj.html
+
 ✨ Features:
 
 Hero section with portrait
@@ -141,6 +148,7 @@ Smooth animations
 ✅ To-Do List App
 
 📄 File: todo-app.html
+
 ✨ Features:
 
 Add, edit, delete tasks
@@ -156,6 +164,7 @@ Date/time stamps
 🔐 Login Authentication System
 
 📄 File: login-authentication.html
+
 ✨ Features:
 
 User registration & login
@@ -166,10 +175,8 @@ Secured dashboard
 
 Session management
 
-Demo Credentials: demo@secureauth.com / demo123
 
-📊🏁 Outcome
-✅ Achievements
+<h3>📊🏁 Outcome</h3>
 
 All 4 projects completed successfully 🎯
 
@@ -179,31 +186,8 @@ Clean, modern UI with smooth UX
 
 All features working as intended
 
-💡 Technical Skills Demonstrated
 
-DOM manipulation & event handling
-
-Responsive design using CSS Grid & Flexbox
-
-Data persistence with localStorage
-
-Form validation & authentication logic
-
-Cross-browser compatibility
-
-🧭 Best Practices Followed
-
-Semantic HTML structure
-
-Clean, maintainable code
-
-Responsive design principles
-
-Accessibility considerations
-
-Performance optimization
-
-📚🎓 Key Learnings
+<h3>📚🎓 Key Learnings</h3>
 
 Mastered vanilla JavaScript for complex interactions
 
@@ -215,29 +199,18 @@ Gained experience in user authentication flows
 
 Enhanced problem-solving and debugging skills
 
-🏁📈 Results
 
-🎯 4 fully functional web applications
-
-📱 100% responsive across all devices
-
-💡 No external dependencies – Pure Vanilla JS
-
-💾 Data persistence using localStorage
-
-🧩 Production-ready code quality
-
-👩‍💻📩 Submission Details
+<h2>👩‍💻📩 Submission Details</h2>
 
 Name: Tanvi Toraskar
 Email: toraskartanvi7@gmail.com
 
 Domain: Web Development
 Task: Task 2 — Interactive Web Applications
-GitHub Repository: 🔗 Click Here
+GitHub Repository: 
 
-Demo Video: (Add link here)
-LinkedIn Post: (Add link here)
+Demo Video: 
+LinkedIn Post: 
 
 📞💬 Contact
 
