@@ -117,6 +117,8 @@ Fixed bugs and improved user experience
 
 📄 File: calculator.html
 
+link:https://toraskartanvi23.github.io/[repo-name]/calculator.html
+
 ✨ Features:
 
 Basic & advanced operations (%, √, power)
@@ -133,6 +135,8 @@ Answer recall
 
 📄 File: tribute-shivaji-maharaj.html
 
+link:https://toraskartanvi23.github.io/[repo-name]/tribute-shivaji-maharaj.html
+
 ✨ Features:
 
 Hero section with portrait
@@ -145,9 +149,13 @@ Achievements showcase
 
 Smooth animations
 
+
+
 ✅ To-Do List App
 
 📄 File: todo-app.html
+
+link:https://toraskartanvi23.github.io/[repo-name]/todo-app.html
 
 ✨ Features:
 
@@ -164,6 +172,8 @@ Date/time stamps
 🔐 Login Authentication System
 
 📄 File: login-authentication.html
+
+link: https://toraskartanvi23.github.io/[repo-name]/login-authentication.html
 
 ✨ Features:
 
@@ -209,9 +219,11 @@ Domain: Web Development
 Task: Task 2 — Interactive Web Applications
 GitHub Repository: 
 
-Demo Video: 
+YOUTUBE Video Link:https://youtu.be/0rw5CyxPbvM 
 
 LinkedIn Post: https://www.linkedin.com/posts/ugcPost-7428691372825702400-4cIJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFaj_boBsiwM3PZ5evLvZH2OyEOwlLZLfoY
+
+BLOG LINK:https://webdevtask2.hashnode.dev/oaisis-web-dev-intenship-blog
 
 📞💬 Contact
 
