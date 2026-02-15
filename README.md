@@ -210,13 +210,14 @@ Task: Task 2 — Interactive Web Applications
 GitHub Repository: 
 
 Demo Video: 
+
 LinkedIn Post: https://www.linkedin.com/posts/ugcPost-7428691372825702400-4cIJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFaj_boBsiwM3PZ5evLvZH2OyEOwlLZLfoY
 
 📞💬 Contact
 
 GitHub: @toraskartanvi23
 
-LinkedIn: Tanvi Toraskar
+LinkedIn: https://www.linkedin.com/in/tanvi-toraskar-84a978346
 
 Email: toraskartanvi7@gmail.com
 
